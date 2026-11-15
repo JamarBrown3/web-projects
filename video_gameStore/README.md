@@ -1,58 +1,22 @@
-# WEB103 Project 4 - Video Game Store
+# Video Game Store
 
-Submitted by: **Jamar Brown**
+A full-stack game customizer. Choose a game's genre, setting, platform, player mode, cover image, and cover color, preview it with its price, then save, view, edit, or delete your custom games. Data is stored in a PostgreSQL database hosted on Render and served by a Node.js/Express REST API to a React frontend. This is a demo: prices and compatibility rules are made up, and nothing is for sale.
 
-About this web app: **Video Game Store is a full-stack game customizer. Users choose a game's genre, setting, platform, player mode, cover image, and cover color, preview the configuration and its price, and then save, view, edit, or delete their custom games. Data is stored in a Render-hosted PostgreSQL database and served through a Node.js/Express REST API to a React frontend. This is an educational demo: prices and compatibility rules are fictional, and no purchases are processed.**
+[Video walkthrough](https://drive.google.com/file/d/1WQXZIV--Gq4v3JTRD5dI8gGbadRC-q5f/view?usp=sharing), including the Render database and the contents of the `games` table.
 
-Time spent: **8** hours
+## Features
 
-## Required Features
+- React pages that read from and write to the API, backed by a PostgreSQL `games` table.
+- Several features to customize, each with multiple options.
+- The price updates as you change options.
+- A live preview, including a background that changes with the cover color (Red, Blue, or Green).
+- Impossible combinations are blocked: choosing **Handheld** with **Online** shows a warning right away and disables Save until you change it. The server rejects them too.
+- The server checks every saved game and calculates the price itself instead of trusting the browser. Shared rules in `shared/gameRules.js` keep the frontend and backend consistent.
+- A list of all saved games on the home page, a `/create` page for new ones, and a detail page for each game.
+- Edit or delete a game from the list or its detail page, with a confirmation before deleting.
+- Loading and error messages on every page that fetches data.
 
-The following **required** functionality is completed:
-
-<!-- Make sure to check off completed functionality below -->
-- [x] **The web app uses React to display data from the API.**
-- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured `CustomItem` table.** (The table is named `games`.)
-  - [X]  **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [X]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
-- [x] **Users can view **multiple** features of the `CustomItem` (e.g. car) they can customize, (e.g. wheels, exterior, etc.)**
-- [x] **Each customizable feature has multiple options to choose from (e.g. exterior could be red, blue, black, etc.)**
-- [ ] **On selecting each option, the displayed visual icon for the `CustomItem` updates to match the option the user chose.**
-- [x] **The price of the `CustomItem` (e.g. car) changes dynamically as different options are selected *OR* The app displays the total price of all features.**
-- [x] **The visual interface changes in response to at least one customizable feature.**
-- [x] **The user can submit their choices to save the item to the list of created `CustomItem`s.**
-- [x] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
-- [x] **Users can view a list of all submitted `CustomItem`s.**
-- [x] **Users can edit a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
-- [x] **Users can delete a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
-  - Each game card in the list has a Delete button that asks for confirmation and removes the game from the database and the list.
-- [x] **Users can update or delete `CustomItem`s that have been created from the detail page.**
-  - The detail page has an "Edit or Delete This Game" link that opens the edit page, where a game can be updated or deleted (with a confirmation prompt).
-
-
-The following **optional** features are implemented:
-
-- [x] Selecting particular options prevents incompatible options from being selected even before form submission
-  - Choosing **Handheld** with **Online** displays a warning right away and disables the Save button until the combination is changed.
-
-The following **additional** features are implemented:
-
-- [x] The backend validates every submitted game and calculates the saved price itself, instead of trusting the price sent by the browser.
-- [x] Shared pricing and validation rules (`shared/gameRules.js`) keep the frontend and backend consistent.
-- [x] Live preview that updates as options change, including a background that changes with the selected cover color (Red, Blue, or Green).
-- [x] Individual game detail pages with their own URLs.
-- [x] Delete confirmation prompt before a game is removed.
-- [x] Loading and error messages for every page that fetches data.
-- [x] Home page shows all saved games, with a separate `/create` page for new games.
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented required features:
-
-Video Walkthrough here: https://drive.google.com/file/d/1WQXZIV--Gq4v3JTRD5dI8gGbadRC-q5f/view?usp=sharing
-
-<!-- GIF created with QuickTime Player screen recording -->
-
+Not built: a game icon that changes with each option you pick.
 
 ## Notes
 
@@ -66,7 +30,7 @@ Challenges encountered included:
 - Connecting the React forms to the API and matching field names across JavaScript and SQL.
 - Fixing navigation paths, handling loading and error states, and keeping text readable against the game-art background.
 
-I used AI assistance (OpenAI Codex, ChatGPT, and Claude) for explanations, debugging guidance, and code examples while adapting and testing the project. Connection settings are stored in a private `server/.env` file that is excluded from Git. Game titles and artwork belong to their respective owners and are used as educational demo content only.
+I used AI assistance (OpenAI Codex, ChatGPT, and Claude) for explanations, debugging guidance, and code examples while adapting and testing the project. Connection settings are stored in a private `server/.env` file that is excluded from Git. Game titles and artwork belong to their respective owners and are used as non-commercial demo content only.
 
 ## License
 

@@ -1,6 +1,6 @@
 # On the Fly ✈️
 
-Designed and developed by **Jamar Brown** for CodePath WEB103.
+Designed and developed by **Jamar Brown**.
 
 ## About
 
@@ -104,4 +104,4 @@ npm --prefix client run dev
 
 Open [the app](http://localhost:5173) and sign in with GitHub. Vite forwards `/api` and `/auth` requests to Express on port `3001`.
 
-For API request examples, see the [Postman walkthrough](STEP12-POSTMAN.md).
+For API request examples, see the [Postman guide](API-POSTMAN.md).

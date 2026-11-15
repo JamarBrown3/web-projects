@@ -1,56 +1,23 @@
-# Web Development Project 2 - Dark Souls II Weapon Archive
+# Dark Souls II Weapon Archive (with PostgreSQL)
 
-Submitted by: **Jamar Brown**
+The second version of the [Dark Souls II weapon archive](../dark-souls2-weapons/). Browse seven weapons, search by name, and open a detail page for each one. The weapons are now stored in a PostgreSQL database hosted on Render and served by a Node.js/Express backend. The frontend is plain HTML, CSS, and JavaScript with Pico CSS.
 
-Project: **Project 2: Listicle Part 2**
+[Video walkthrough](https://drive.google.com/file/d/1_8uPy7tjRZzYrdUZs6UBrtjceTRLRB25/view?usp=sharing) (recorded with QuickTime Player)
 
-This web app: **A Dark Souls-themed weapon archive where users can browse
-seven weapons, search by weapon name, and open individual detail pages.
-Weapon records are stored in a Render-hosted PostgreSQL database and
-retrieved through a Node.js/Express backend. The frontend uses vanilla
-HTML, CSS, JavaScript, and Pico CSS.**
+## Features
 
-Time spent: **[3.30]** hours spent in total
-
-## Required Features
-
-The following **required** functionality is completed:
-
-- [x] The web app uses only HTML, CSS, and JavaScript without a frontend framework.
-- [x] Data is supplied to the app using a Render PostgreSQL database.
-  - [x] The web app is connected to a Render PostgreSQL database.
-  - [x] The database contains an appropriately structured table for the list items.
-
-The following **stretch** features are implemented:
-
-- [x] Users can search for items with a specific attribute.
-  - Users can search weapons by name.
-  - Search is case-insensitive and supports partial matches.
-  - Clearing the search restores all weapon cards.
-  - A message appears when no weapons match.
-
-The following **additional** features are implemented:
-
-- [x] Seven weapon records are displayed as cards.
-- [x] Each weapon has a corresponding detail page.
-- [x] Invalid weapon IDs and unknown routes display a custom 404 page.
-- [x] The homepage and 404 page use different background images.
-- [x] The site uses Pico CSS and custom dark-themed styling.
-- [x] The layout includes responsive cards and a mobile detail-page layout.
-- [x] Navigation links allow users to return to the weapon archive.
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented required and stretch features:
-
-**[https://drive.google.com/file/d/1_8uPy7tjRZzYrdUZs6UBrtjceTRLRB25/view?usp=sharing]**
-
-Recording tool: **[QuickTimePlayer by Mac OS]**
+- Weapon data comes from a Render PostgreSQL database with a `weapons` table.
+- Search by weapon name: case-insensitive, matches part of a name, shows a message when nothing matches, and clearing it brings every card back.
+- Seven weapon cards, each with its own detail page.
+- A custom 404 page for unknown pages and invalid weapon IDs.
+- No frontend framework: plain HTML, CSS, and JavaScript, styled with Pico CSS and a custom dark theme.
+- Different backgrounds on the home and 404 pages, responsive cards, and a phone-friendly detail page.
+- Navigation links back to the archive.
 
 ## Notes
 
-This project builds on my Unit 1 weapon archive by replacing direct access
-to a JavaScript array with PostgreSQL queries.
+This version builds on the first weapon archive by replacing a JavaScript
+array with PostgreSQL queries.
 
 The backend uses the pg package to connect to a Render PostgreSQL database.
 A setup script creates the weapons table and inserts the initial weapon
@@ -90,7 +57,7 @@ independently of the terminal's working directory.
 
 1. Build the frontend from client/: run `npm ci`, then `npm run build`.
 2. From server/, run `npm ci`.
-3. **Existing Unit 2 database:** run `npm run migrate` once before starting
+3. **Database from an earlier version:** run `npm run migrate` once before starting
    this updated version. It renames weapontype to weapon_type without
    deleting records or changing IDs. It is safe to rerun.
 4. Run `npm test` from server/. Tests use fake database responses, do not

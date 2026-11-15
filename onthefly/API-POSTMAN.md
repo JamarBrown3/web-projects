@@ -1,4 +1,4 @@
-# On the Fly: Step 12 practice
+# On the Fly: API requests with Postman
 
 Start from the project root with `npm run dev`. All URLs below start with
 `http://localhost:3001/api`. Use Postman's method dropdown to select GET, POST,

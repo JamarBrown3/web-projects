@@ -1,16 +1,18 @@
-# Web Development Project 1 - Dark Souls II Weapon Archive
+# Dark Souls II Weapon Archive
 
-Submitted by: **Jamar Brown**
+A Dark Souls-themed weapon archive. Browse seven weapons and open a detail page for each one, with its image, weapon type, damage type, scaling, description, and location. Built with plain HTML, CSS, and JavaScript, Pico CSS, and a Node.js/Express backend.
 
-Project: **Project 1: Listicle Part 1**
+[Video walkthrough](https://drive.google.com/file/d/1bMKQ-vpFMAUh2RSK4JbCMZ7kUQ4WtU2V/view?usp=sharing) (recorded with QuickTime Player)
 
-This web app: **A Dark Souls-themed weapon archive where users can browse
-seven weapon entries and open individual detail pages. Each entry includes
-an image and information about its weapon type, damage type, scaling,
-description, and location. The project uses vanilla HTML, CSS, JavaScript,
-Pico CSS, and a Node.js/Express backend.**
+## Features
 
-Time spent: **5** hours spent in total
+- Seven weapon cards on the home page, each with at least three details.
+- A detail page for every weapon, with all of its data and a browser tab title that matches the weapon.
+- A custom 404 page for unknown pages and weapon IDs.
+- No frontend framework: plain HTML, CSS, and JavaScript, styled with Pico CSS.
+- A dark theme with gold accents, and different backgrounds on the home and 404 pages.
+- A shared navigation header that links back to the archive.
+- A responsive card grid and a phone-friendly detail page.
 
 ## Running the project
 
@@ -38,8 +40,8 @@ the next build replaces it. Generated output is excluded from Git, so a fresh
 clone must run the build before starting Express.
 
 `server/server.js`, `server/routes/`, and `server/data/` contain backend source.
-Unused Vite starter files have been removed. Vite remains the build tool used
-in the course; it is not a frontend framework.
+Unused Vite starter files have been removed. Vite is only the build tool;
+it is not a frontend framework.
 
 For optional Vite development, run `npm run dev --prefix client` alongside
 Express and use the address Vite prints (usually port 5173). Its `/weapons`
@@ -58,40 +60,6 @@ testing, including unknown URLs and the custom 404 response.
 
 API text is rendered with `textContent` or DOM text nodes instead of HTML
 interpolation. Failed data requests display a readable message.
-
-## Required Features
-
-The following **required** functionality is completed:
-
-- [x] The web app uses only HTML, CSS, and JavaScript without a frontend framework.
-- [x] The front page is functional and appropriately styled.
-  - [x] The web app displays a title.
-  - [x] The website displays at least five unique list items.
-  - [x] Each list item includes at least three displayed attributes.
-- [x] Each list item has a corresponding detail page.
-  - [x] The user can click each item to see a detailed view including all data fields.
-- [x] The web app serves an appropriate 404 page when no matching route is defined.
-- [x] The webpage is styled with Pico CSS.
-
-The following **stretch** features are implemented:
-
-- [x] List items are displayed in a unique format using weapon cards.
-
-The following **additional** features are implemented:
-
-- [x] Seven weapon entries are available to browse.
-- [x] The homepage and 404 page have different background images.
-- [x] Custom CSS adds a dark theme with gold accents.
-- [x] A shared navigation header links back to the weapon archive.
-- [x] The browser tab title changes to the selected weapon's name.
-- [x] CSS includes a responsive card grid and a mobile detail-page layout.
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented required features:
-
-Video created with **QuickTime Player on macOS**.
-The video link is here at: https://drive.google.com/file/d/1bMKQ-vpFMAUh2RSK4JbCMZ7kUQ4WtU2V/view?usp=sharing
 
 ## Notes
 
